@@ -1,29 +1,17 @@
+//Reading until EOF
+
 #include<iostream>
+#include<fstream>
 using namespace std;
 
-template<class T>
-
-class First {
-	T a;
-public:
-	First(){}
-	First(T x) {
-		a = x;
-	}
-	void set() {
-		cout << "Enter value: ";
-		cin >> a;
-	}
-	T get() {
-		return a;
-	}
-};
-
 int main() {
-	First<int> f1(5);
-	First<float> f2;
-	f2.set();
-	cout << "F1 value: " << f1.get();
-	cout << " F2 value: " << f2.get();
+	ifstream file;
+	char ch;
+	file.open("abc.txt");
+	cout << "ALL characters from file: " << endl;
+	while(!file.eof()) {
+		file.get(ch); //get a char at a time.
+		cout.put(ch); //cout << ch;
+	}
 	return 0;
 }
