@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+
+class A {
+public:
+	int a;
+};
+
+class B : public virtual A {
+public:
+	int b;
+};
+
+class C : public virtual A {
+public:
+	int c;
+};
+
+class D : public B, public C {
+public:
+	int d;
+};
+
+int main() {
+	D d1;
+	cout << "ENter value of A: ";
+	cin >> d1.A::a;
+	d1.B::a = 5;
+	d1.C::a = 10;
+	cout << "A = " << d1.a << "B = " << d1.b << "C = " << d1.c;
+	return 0;
+}
