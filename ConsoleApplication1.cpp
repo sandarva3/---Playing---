@@ -1,42 +1,29 @@
+//DYNAMIC CONSTRUCTOR
 #include<iostream>
 using namespace std;
 
-class create {
-	int size;
-	int* arr;
+class B;
+class A {
+	int a;
 public:
-	create() {
-		size = 0;
-		arr = NULL;
-	}
-	create(int s) {
-		size = s;
-		arr = new int[size];
-		for (int i = 0; i < size; i++) {
-			arr[i] = 0;
-		}
-	}
-	void setValue(int index, int value) {
-		arr[index] = value;
-	}
-	void getValue(int index) {
-		cout << arr[index] << endl;
-	}
-	void display() {
-		for (int i = 0; i < size; i++) {
-			cout << arr[i] << ", ";
-		}
-	}
-
+	friend class B;
 };
 
-int main() {
-	create c1(5);
-	c1.setValue(0, 25);
-	c1.setValue(1, 30);
-	cout << "Value at 0: ";
-	c1.getValue(0);
-	cout << "Value at 1: ";
-	c1.getValue(1);
-	c1.display();
+class B {
+	int b;
+public:
+	void set(int x, int y, A& a1) {
+		a1.a = x;
+		b = y;
+	}
+	void get(A& a1) {
+		cout << "Object A value= " << a1.a << ", Object B value= " << b << endl;
+	}
+};
+
+void main() {
+	A a1;
+	B b1;
+	b1.set(5, 10, a1);
+	b1.get(a1);
 }
