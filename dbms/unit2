@@ -1,0 +1,49 @@
+### ER and Relational Model.
+
+- Entity:
+        Entity is any type of real world object which has properties(attributes).
+
+- Entity Relationship Model (ER Model):
+        ER Model is the high level conceptual view of database. It layouts the different entities in database and how they are connected, 
+        without revealing much details about them. It's a tool to facilitate a communication between application programmer, designer, and end user.
+
+- Data Model:
+        It's a structure which defines a database object(an entity), its relationship and constraint in database. It's a blueprint for how a data is stored in dbms.
+        3 levels of data modelling:
+            1) Conceptual Data Modelling: It includes very high level design of data, only containing its relationship with other entities. It doesn't include object's attributes
+                    and primary key.
+            2) Logical Data Modelling: It includes the relationship among entities, and their attributes. It also contains primary and foregin keys. But it doesn't contain
+                    physical implementation or specefic dbms.
+            3) Physical Data Modelling: It shows how the model will be actually implemented in dbms. It shows the data types, contraints, column names, primary and foreign keys,
+                    and relationship between entities(tables).
+
+- Attributes: They are properties of an entity.
+    1)Simple attributes: attributes which can't be divided further. name, age.
+    2)Composite attributes: attributes which can be divided further. Full name to first and last name.
+    3)Derived attributes: which can be derived from other attributes. age can be derived from DOB.
+    4)Single valued: which can have only 1 value. citizenship no.
+    5)Multi valued: which can have multiple values. phone no, email.
+
+- ER diagram: It's the graphical representation of database design, to visualize the different entities, their attributes, and relationship between them. It's the blueprint for
+	actual implementation of database design.
+	Components:
+		1)Rectangle: To represent entity.
+		2)Ellipse/Oval: To represent entity's attributes
+		3)Diamonds: To represent relationship between different entities.
+		4)Line: To link entities and their attributes.
+		5)Double Ellipse: To represent multi-valued attributes.
+		6)Dashed Ellipse: To represent derived attributes.
+		7)Double Rectangle: To represent weak entity.
+	
+	The role of an entity in ER model describes the function or part it plays in relationship. The purpose of role is to make model more clear to avoid confusion.
+	
+	Mapping cardinalities describes the association between entities of set A and entities of set B, and how they interact. It defines the constraint in relationship between
+		entities of different set.
+		Its types are:
+			1)One-One: A instance of entity A is only associated with a single instance of entity B.(1 person have only 1 passport)
+			2)One-Many: An instance of entity A is associated with many instances entity B, but an instance in entity B is only associated with single instance
+				of entity A.(A teacher teaches many students, but any one student is only taught by a single teacher)
+			3)Many-One: Multiple instances of entity A is associated with only single instance of entity B, but an instance of B is associated with only single
+				instance of A.
+			4)Many-Many: Many instances of A can be associated with many instances of B, and vice versa.(Students take many courses, and each course have many students).
+	
