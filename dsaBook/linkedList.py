@@ -4,7 +4,7 @@ class Node:
 		self.nextNode = nextNode
 
 	def __str__(self):
-		return f"Node with data: {self.data}"
+		return f"Node{self.data}"
 
 
 
@@ -21,3 +21,15 @@ print(node3)
 print(node2)
 print(node1)
 
+#In the above code we just created few nodes and linked them together.
+#Now lets create class of LinkedList itself so that it directly points to the head of our list(meaning the first node).
+
+class Linkedlist:
+	def __init__(self, node):
+		self.head = node
+	def __str__(self):
+		return f"Head of list: {self.head}"
+
+list = Linkedlist(node1)
+
+print(list)
