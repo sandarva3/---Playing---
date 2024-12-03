@@ -1,0 +1,11 @@
+- Memory in computers are just cells, where each cell represents a bit.
+
+- Array requires a contigious block cells to store data, which becomes more difficult as the amount of data increases in an array.
+
+- The main strength of LinkedList compared to array is that: data can be dispersed throughout the memory, meaning linkedlist won't require a contigious block of memory
+		to store data.
+
+- LinkedList: It's a user-defined data type where it's variable(generally called as 'node') can store two things: data and address of next variable of this same type.
+		It contains two parts: data, and link(the address part). Multiple instances of these LinkedList are created, and one is linked to another.
+		The starting node of linkedlist is generally referred to as Head, while last node in the list is generally called Tail.
+		
