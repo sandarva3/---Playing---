@@ -124,3 +124,4 @@ def delete(index):
         return f"Node at index {index} is deleted. The new node at that index is: {current_node.next_node}"
 
 print(delete(2))
+

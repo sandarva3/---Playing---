@@ -9,3 +9,11 @@
 		It contains two parts: data, and link(the address part). Multiple instances of these LinkedList are created, and one is linked to another.
 		The starting node of linkedlist is generally referred to as Head, while last node in the list is generally called Tail.
 		
+
+- One area where linkedlist shine over array is when we have to make an insertion or deletion of elements in the middle of the list. Adding or remove element in array would cause
+	every other element to move right to make space for new element, or move left to fill the gap. But in linked list we can just do these things with one step.
+	
+- Doubly linked list: They're linkedlist where each node points to previous and next node.
+
+- Queues as linked list: Normally, we previously implemented queue through array, but now we can do the same with doubly linkedlist.
+
