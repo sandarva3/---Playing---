@@ -1,0 +1,21 @@
+- If we want our elements in the list in ordered set, either alphabetically or numerically(ascending or descending), then our go-to data structure would be an array, where we can
+	certainly put elements, and run some sorting algorithm in it. But also, when it comes to insertion or deletion, ordedered are quite slow, they take O(N) for extreme and O(N/2) for 
+	average cases. 
+	We can certainly look for hash table, which are blazingly fast and take O(1) for insertion, searching, and deletion, and reading as well, since hash function is applied to the 
+	key to look exactly at the location.
+
+- Tree also works in nodes, and is a kind of datastructure where each node points to two different nodes, the two branches of it. In tree each node may or may not have subtrees,
+	eg: if B,C are the branches of A(which have two branches) then B,C may not have branches, or have unequal amount(meaning B might have 2/3/n branches, and C might have it in
+	different amount or not have it). The tree is called balanced tree if all nodes in tree have equal number of branches/sub-branches. The main node(A) is called the root node, and all
+	are its descendants/child and A is ancestor of all nodes.
+
+- Binary tree are tree structure where each node can have 2 child at max. Node with no child is called leaf node.
+- Binary search tree are the binary tree where each node have 2 childs, and the all the left descendants are less than in value than that node, and all the right descendants are greater
+	in value than that node.
+
+- Each rows in binary tree is known as level.
+
+- For a Binary tree containing N nodes, the required levels(or rows) is log(N). Let's assume our tree has 2 levels(3 nodes), now to add another node, we need to add all other empty
+	nodes as well, to keep it as binary tree. So it takes log(N) levels for N nodes.
+
+- Similarly, searching for any value in 'binary search tree' requires O(log(N)) steps, the amount of steps of its levels.
