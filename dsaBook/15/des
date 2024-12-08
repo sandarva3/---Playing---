@@ -18,4 +18,25 @@
 - For a Binary tree containing N nodes, the required levels(or rows) is log(N). Let's assume our tree has 2 levels(3 nodes), now to add another node, we need to add all other empty
 	nodes as well, to keep it as binary tree. So it takes log(N) levels for N nodes.
 
-- Similarly, searching for any value in 'binary search tree' requires O(log(N)) steps, the amount of steps of its levels.
+-SEARCHING: Similarly, searching for any value in 'binary search tree' requires O(log(N)) steps, the amount of steps of its levels. As with each search step we eliminate half of the 
+	remaining nodes, because all left node will have less value and all right will have high value.
+
+- INSERTION: While inserting also, we just traverse the nodes and keep checking where can we create a node(to store the value) properly. This takes O(log(N)) steps too.
+
+- It's IMPORTANT to know that when creating Binary search tree, it's only efficient to create it if the data we're inserting is in random order and not sorted. If it's well sorted in
+	ascending or descending order then all the upcoming value would be less or greater than the first value, so we end up creating linear tree, where every node will have branch
+	on only same single side(due to which it'll take up to O(N) steps while performing operations). If we want to create a binary tree out of ordered array then we better first de-order
+	it and create a tree from that unsorted values.
+	
+
+- DELETION: To delete any value/node from tree, we need to perform these steps:
+	1) If the deleting node don't have any child, then simple delete it.
+	2) If deleting node has one child, then delete that node and keep its child in its position.
+	3) If deleting node has two childrens then, then find the successor node from its descendants, delete the deleting node and replace it with successor node.
+		Successor node: The node which have just the high value than deleting node, but it's also the least of all values among descendants of deleting node.
+		Finding successor node: Just go to right-child of deleting node, and keep going to left child of subsequent nodes until we found a node which has no child, or
+		has no left child.
+	4) If we found a successor node which only have right child and no-left child then, replace the deleting node with successor node and put the right child as the left child
+		of successor's parent.
+
+
