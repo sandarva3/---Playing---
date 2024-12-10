@@ -1,2 +1,0 @@
-class delete(value, node):
-    

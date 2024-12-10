@@ -38,5 +38,14 @@
 		has no left child.
 	4) If we found a successor node which only have right child and no-left child then, replace the deleting node with successor node and put the right child as the left child
 		of successor's parent.
+	
+	:The time complexity of deletion is also O(log(N)).
 
 
+- TRAVERSAL(Reading): Doing traversal of N nodes in the tree requires N steps, since we need to visit every node and read its value. So it's time complexity is O(N).
+
+- Inorder traversal: It's the way of traversing the nodes in binary tree where we:
+	First, traverse left child, of node and its subnodes, until the point there's no left child.
+	Second, After we found a node with no left child then we go to its parent node and start to traverse it right child.
+	Third, After going to right child, we first go to its left child again.
+	And repeat first, second, third.

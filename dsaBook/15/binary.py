@@ -23,10 +23,9 @@ def search(value, node):
     while True:
         if node is None:
             return f"Value not found."
-        else if node.value == value:
+        elif node.value == value:
             return f"Value is in node: {node}"
-        else if:
-            value < node.value:
+        elif value < node.value:
                 node = node.left_child
         else:
             node = node.righ_child
@@ -35,12 +34,11 @@ def search(value, node):
     def search2(value, node):
     #First base case: if node is None
         if node is None:
-            return f"Value not found"
+            return None
     #Second base case: if we found the value
-        else if node.value == value:
-            return f"Value is in node: {node}"
-        else if:
-            value < node.value:
+        elif node.value == value:
+            return node
+        elif value < node.value:
                 search2(value, node.left_child)
         else:
             search2(value, node.right_child)
@@ -58,7 +56,7 @@ def insert(value, node):
                 return f"Inserted as left child in node: {node}"
             else:
                 node = node.left_child
-        else if value > node.value:
+        elif value > node.value:
             if node.right_child is None:
                 new_node = Treenode(value)
                 node.right_child = new_node
@@ -75,18 +73,54 @@ def insert2(value, node):
         if node.left_child is None:
             new_node = Treenode(value)
             node.left_child = new_node
-            return f"Inserted as left child in node: {node}"
+            return node
         else:
             insert2(value, node.left_child)
-    else if value > node.value:
+    elif value > node.value:
         if node.right_child is None:
             new_node = Treenode(value)
             node.right_child = new_node
-            return f"Inserted as right child in node: {node}"
+            return node
         else:
             insert2(value, node.right_child)
     else:
-        return f"Value already exist at node: {node}"
+        return node
 
 
 
+
+#TRAVERSAL: Inorder traversal.
+def traverse(node):
+    if node is None:
+        return
+    traverse(node.left_child)
+    print(node)
+    traverse(node.right_child)
+
+print("TRAVERSING....")
+traverse(root)
+
+#DELETION. using recursion.
+
+'''
+def delete(value, node):
+    if node is None:
+        return None
+    elif value < node.value:
+        node.left_child = delete(value, node.left_child)
+    elif value > node.value:
+        node = node.right_child
+    elif value == node.value:
+        if node.left_child == None and node.right_child == None:
+            node.value = None
+        elif node.left_child or node.right_child:
+            try:
+                node = node.left_child
+                node.left_child = None
+            except:
+                node = node.right_child
+                node.right_child = None
+        elif node.left_child and node.right_child:
+            suc_node = node.righ_child.left_child while
+            
+            '''

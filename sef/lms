@@ -1,0 +1,12 @@
+
+Library Management System:
+	- Any library member should be able to search books by their title, author, subject category, as well by the published date.
+	- Each book will have an unique identification number, and other details including: rack number(which will help to physically locate the book).
+	- There could be more than one copy of a book, and library members should be able to checkout and reserve any copy. We will call each copy a book item.
+	- The system should be able to retrieve information like who took a particular book or what are the books checked out by a specific library member.
+	- There should be maximum limit of 5, on how many books a member can checkout.
+	- There should be maximum limit of 10, on how many days a member can keep a book.
+	- The system should be able to collect fine for fine for books returned after the due date.
+	- Member should be able to reserve the books that aren't currently available.
+	- The system should be able to send notification whenever the reserved book becomes available, as well when the book is not returned within the due day.
+	- Each booking member card will have unique bar code. The system will be able to read bar code from books and members library card.
