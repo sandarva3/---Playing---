@@ -1,0 +1,48 @@
+- Priority queue: This is the type of data structure in which we store elements according to their priority in the list. We enter data from front and remove from end, but instead of
+		normally putting data one after another just like in normal queue, we put data according to their priority in priority queue. Each data element will also contain the
+		information about their priority order. If a data is with priority 10 at the end(just to be removed), and new data enters the list with priority 15 then we put the new
+		data in end. To do this we have to check every priority of every data in a list, which is going to take O(N) in ordered array, and to remove each element it's going to 
+		take O(1).
+		:To overcome this challenge of algorithm taking O(N) steps just to find the right spot on list, people invented new data structure: Heaps.
+
+- Binary heaps: There are other types of heaps as well, but here we're focusing on binary heaps. This is just a binary tree(not a binary search tree) where each node can have 2 child
+		at most.
+
+- Heap Conditions: The conditions which is required for Binary Tree to be heap:
+			1) Each node must have higher value than its descendants(max-heap). Each node must have lower value than its descendants(min-heap).
+			2) The tree must be complete- meaning there shouldn't be any empty nodes in any level(row) of the tree. However, a tree can also be complete on the presence
+			of empty node, but there should be only one empty node on the bottom row and there shouldn't be any node on the right side after that empty node.
+
+- As there's not much order in heap like binary search tree, heaps aren't much used to perform search operations. They're primarily used for accessing the priority value, as the will
+		represent the priority(because it'll have the highest value among its ancestors). It's ordered just enough(node having highest value than its ancestors) to help us more
+		while implementing priority queue. 
+
+- Last node: In heap, the last node is the rightmost node of the bottom row.
+
+
+#INSERTION
+- Trickling up the node:
+		1) When we first try to insert a value in the heap, we put the newNode in the last position and make it the last node.
+		2) Then we compare the newNode value and its parentNode value, if it's greater than parentNode then we swap the newNode with parentNode.
+		3) We repeat step 2, until newNode has less value than its parentNode. If newNode value is smaller than parentNode then we stop.
+		:This process of moving the node up in the heap is called trickling the node.
+		This will take O(log2(N)) steps.
+
+
+
+
+#DELETION
+In priority queue, we only remove the element which is in the end the list, the one with highest priority value. Similarly, in the heap structure as well we'll remove the node with the
+		highest value- the root node.
+		1) We overwrite the root node with last node, effectively removing the root node.
+		2) We trickle down the new root node(the last node): We compare the two childs and we swap it with a child having largest value.
+		3) We repeat step 2, until it doesn't have child with less value than its value.
+
+
+- The problem with heap is that, it's very hard to find the last node, we need to traverse the whole N nodes for that and our time complexity would become O(N) steps. Why last node
+		is so important and why do we need to find the last node? why not use any other nodes? because it'll cause an imbalance in tree structure and it won't be a heap any
+		more. We need it to be heap because it allows us to implement priority queue efficiently, only taking O(log2(N)) steps for deletion as well as insertion.
+
+- So, we implement heap with an array because it allows us to find the last node. Essentially as we go through each level in Binary tree, each assign index to each node from left
+		to right. So the root node will be 0, its left child 1, its right child 2, again at next level we assign from 3 start from left.
+		This way, the last index would be the last node.
