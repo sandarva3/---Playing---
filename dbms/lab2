@@ -1,0 +1,21 @@
+- Alter the column name of table: ALTER TABLE table_name CHANGE old_column_name new_column_name column_type;
+	eg: ALTER TABLE users CHANGE address location VARCHAR(255);
+
+
+- Change the value of particular record of user: 
+	eg: UPDATE employee SET name="Krishna", address="Pharping" WHERE eid = 1;
+
+- To get the records from a table where each record have a distict value.
+	SELECT * FROM employee GROUP BY job HAVING COUNT(job) = 1; // only records of employee whose job is truly unique(meaning any other person except them isn't
+								   // doing the job.
+	or, 
+	SELECT name FROM employee GROUP BY job; // gives the name of employees having distinct jobs. each employee here will have distict jobs. if multiple employees 
+						// were having same jobs, then the it'll show the employee appearing first in the record.
+
+- To delete records of employees whose job is 'ceo' or 'CEO':
+	DELETE FROM employee WHERE job = "ceo";
+	// To delete employees whose job is 'administrator' and have salary greater than 35000:
+	DELETE FROM employee WHERE job = "administrator" AND salary > 35000;
+
+
+- NOTE: If the specified column was of type int and we try to insert varchar value into it then 0 would be inserted automatically by system.
