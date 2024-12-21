@@ -108,7 +108,7 @@ public:
 
 int main() {
     Queue queue;
-    int choice, value;
+    int choice, value, count;
 
     while(choice != 6){
         cout << "1. Enqueue Front\n";
