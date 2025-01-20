@@ -23,7 +23,7 @@ public:
         return front == -1;
     }
 
-    void enqueue_front(int val) {
+    void enqueue_front() {
         if (isFull()) {
             cout << "Queue is full!\n";
             return;
@@ -150,3 +150,6 @@ int main() {
 
     return 0;
 }
+
+
+

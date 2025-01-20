@@ -1,0 +1,31 @@
+- TO rename the column= 
+	alter table (tablename)
+	change column (old column name) (new column name) (data type of new column);
+
+
+- To modify the data type of existing column=
+	alter table (table name)
+	modify column (column name) (new data type);
+
+
+- To view the description of the table, like its structure, column name, data type, NULL, DEFAULT values, PRIMARY KEY/FOREIGN KEY=
+	describe (tablename);
+
+- To view the details of each column of table: (similar to 'describe' command):
+	show columns from (tablename);
+
+- Sorting table in some order=
+	select * from (tablename)
+	order by (columnName) asc/dsc;
+	
+	#Example:
+	select * from employees;
+	order by ename asc, age desc; # This is order the table first on basis of 'ename' in ascending order, and incase if both employee have same name then
+					it will sort them on basis of age in descending order. Meaning 
+
+- Updating a particular column value of particular record=
+	update (tablename)
+	set (columnName) = (value)
+	where (condition);
+
+- join commands (not done)

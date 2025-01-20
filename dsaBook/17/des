@@ -1,0 +1,16 @@
+- So, the Trie data structure is a form of Tree data structure. Unlike Binary tree, with trie we can have any number of child nodes for a node.
+
+- Trie is mostly used in autocomplete features of texts, like in smartphones when we start to type something.
+What happens here is that, we put every character in dictionary format and every value of every key(character) would be tied to it through hash function(of-course, cause it's dictionary).
+Every character would point to other character.
+
+- In auto-complete, Every character would point to other character through which a word might be formed. All words are structured like this in auto-complete feature.
+So that's why, every node might have many nodes.
+
+- We use '*' to indicate the end of the node, meaning the node with '*' as key won't have any child nodes, or nothing to point to.
+	However, there might be two or more keys in dict object, where '*' might exist along with another one. In this case, it means that all the characters which led to '*' is a word,
+	however, it's a prefix for another word. And if user enters another character, our algorithm would understand that user would want another word, so it'll follow the matching
+	key in our dict object.
+	eg: 'hell' would be prefix for 'hello', 'web' would  be prefix for 'website'.
+
+
