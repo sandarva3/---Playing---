@@ -1,0 +1,41 @@
+Components of JDBC:
+- Driver manager: 
+	- Responsible for connecting database with java application.
+	- Manages list of available drivers.
+	- Factory of connection objects.
+	- Part of java.sql package.
+	-methods: 
+		- public static Driver getDriver(String url) throws SQLException{} // returns the driver associated with given url
+		- public static Connection getConnection(String url, String uname, String pwd) throws SQLException{} // used to connect with db, returns connection object
+
+- Connection:
+	- An interface, which represents session between java application and database.
+	- Factory of Statement and PreparedStatement objects.
+	- methods:
+		public PreparedStatement prepareStatement(String query) throws SQL Exception{} // makes PreparedStatement object for dynamic querying
+		public void close() throws SQLException {} // It closes connection with database and return all jdbc resources immediately.
+
+- Statement:
+	- An interface that allows us to execute sql queries.
+	- doesn't have placeholder for dynamic querying
+	- methods:
+		public ResultSet executeQuery(String query) throws SQLException {} // allows us to execute DQL select statement, returns ResultSet object
+		public int executeUpdate(String query) throws SQLException {} // allows us to execute DML commands like update,insert,delete, it returns int.
+
+- PreparedStatment:
+	- A sub-interface of statement.
+	- Allows us to execute dynamic query through placeholder.
+	- methods: (same as of Statement above)
+
+- ResultSet:
+	- An interface whose object is created when DQL command is executed.
+	- It holds tabular data(table) and maintains a cursor at the row.
+	- methods:
+		- public boolean next() {} // moves cursor one step down from current position
+		- public boolean previous() {} // moves cursor one step up from current position
+		- public boolean first() {} // moves cursor to first row
+		- public boolean last() {} // moves cursor to last row
+
+- Rowset:
+	- Extended version of ResultSet.
+	- It's more easier, flexible than ResultSet.

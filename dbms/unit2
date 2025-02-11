@@ -1,5 +1,18 @@
 ### ER and Relational Model.
 
+- Super Key, Candidate key:Super keys and candidate keys So, they're columns whose values would have inherent uniqueness in themselves. Like StudentId, rollno, email. The values would be 
+		inherently unique for each records. So they become a candidate key. In super key, we combine these values, possible creating their permutations, and it becomes the super
+		key. Even for 4 candidate keys, there'd be many super keys, permutation of 4 to 4. Basically super keys are combinations of attributes that guarantee uniqueness.
+		And primary key is the column whose value would be 100% unique for each records, so we choose that as primary key from list of candidate keys on which we're most confident 
+		about: it won't change over time, wont' be null, will be 100% unique for each record no matter what. And if that kind of column doesn't exist, we make one ourself, like ID 
+		or similar. That's why we often make separate new column for pk because we want it to be 100% unique and reliable in that term.
+
+- Total and partial specialization generalization:
+		So, Total specialization/generalization means that we specialize(move top-down) or generalize(move bottom-up) in way that every entity/subclasses or instances fit into one 
+		superclass. Like People_in_unversity can have subclasses of 'professor' or 'student', which forms partial relationship, because it doesn't count in other members, like 
+		janitors or canteen owners etc. The relationship is partial and is not full. Total means we need to make subclass in a way that it categorizes everyone, and every element 
+		that can fit into 'People_in_university' should also fit into one of the subclasses: like Male, Female, Others. OR, Staffs, students. etc.
+
 - Entity:
         Entity is any type of real world object which has properties(attributes).
 

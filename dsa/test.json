@@ -1,0 +1,75 @@
+{
+    "data": {
+        "type": "tree",
+        "date": "2014-09-20 12:44:06Z",
+        "message": "This is a commit message."
+    },
+    "links": [
+        > ipfs file-cat <ccc111-hash> --json
+{
+            "data": {
+                "type": "tree",
+                "date": "2014-09-20 12:44:06Z",
+                "message": "This is a commit message."
+            },
+            "links": [
+                {
+                    "hash": "<ccc000-hash>",
+                    "name": "parent",
+                    "size": 25309
+                },
+                {
+                    "hash": "<ttt111-hash>",
+                    "name": "object",
+                    "size": 5198
+                },
+                {
+                    "hash": "<aaa111-hash>",
+                    "name": "author",
+                    "size": 109
+                }
+            ]
+        }
+> ipfs file-cat <ttt111-hash> --json
+{
+            "data": nil,
+            "links": [
+                {
+                    "hash": "<ttt222-hash>",
+                    "name": "ttt222-name",
+                    "size": 1234
+                },
+                {
+                    "hash": "<ttt333-hash>",
+                    "name": "ttt333-name",
+                    "size": 3456
+                },
+                {
+                    "hash": "<bbb222-hash>",
+                    "name": "bbb222-name",
+                    "size": 22
+                }
+            ]
+        }
+> ipfs file-cat <bbb222-hash> --json
+{
+            "data": "blob222 data",
+            "links": []
+        }
+{
+            "hash": "XLa1qMBKiSEEDhojb9FFZ4tEvLf7FEQdhdU",
+            "name": "parent",
+            "size": 25309
+        },
+        {
+            "hash": "XLGw74KAy9junbh28x7ccWov9inu1Vo7pnX",
+            "name": "object",
+            "size": 5198
+        },
+        {
+            "hash": "XLF2ipQ4jD3UdeX5xp1KBgeHRhemUtaA8Vm",
+            "name": "author",
+            "size": 109
+        }
+    ]
+}

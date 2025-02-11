@@ -5,18 +5,18 @@ class Stack {
 private:
     int stack[100];
     int top;
-    int maxSize;
+    int size;
 
 public:
 
-    Stack(int size) {
-        maxSize = size;
+    Stack(int size1) {
+        size = size1;
         top = -1;
     }
 
 
     void push() {
-        if (top == maxSize - 1) {
+        if (top == size - 1) {
             cout << "Stack overflow!" << endl;
         } else {
             int a;
@@ -70,7 +70,7 @@ void again(Stack &myStack) {
         switch (choice) {
             case 1:
                 myStack.push();
-                break;
+                break
             case 2:
                 myStack.pop();
                 break;

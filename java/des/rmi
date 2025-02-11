@@ -1,0 +1,16 @@
+- RMI: RMI stands for Remote Method Invocation, it's a java based technology which allows a computer(client) to invoke a procedure or method in remote computer(server). 
+	Basically it works like this:
+	- Both client and server will have common interface.
+	- There's a thing called Registry, where server will register the objects and methods of those objects. This is called Binding.
+	- Client look to namespace(registry), and get the object, and call method. It already knows the name of method and object, because it already has the common interface.
+	- Client invoke method.
+	- A thing called 'stub' resides on client side, which is just a gateway for request client made to be passes(it acts as a proxy for client). It just does this: get parameters 
+		required for the method to be invoked, and give them to skeleton, and gets back the outcome from skeleton.
+	- Skeleton: it's the gateway on server side, which takes the parameters list and method called, and actually invokes the method and sends back the outcome to stub. Skeleton is now 
+		replaced by UnicastRemoteObject, but also we call it skeleton.
+	
+- There are 4 steps to make RMI application:
+	- Make common interface
+	- Implement the interface on server code
+	- Bind the interface on registry.
+	- Write the code in client side to perform lookup, and hence invoke methods.

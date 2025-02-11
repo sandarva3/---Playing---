@@ -1,0 +1,49 @@
+- Security means the protection of data in database, either form unauthenticated users, or from authenticated users.
+- The objective of achieving secure system is for: integrity of data, secrecy of data, and availability of data.
+- And database security means securing access to data from different users, giving permission to do various operations on data to certain users, while preventing others.
+
+Generally Database security can be: 
+	1) Physical security(the database server must be physically secure from theft or intruders, it should be kept in protected site).
+	2) Logical security: Have the logical mechanism to verify user, identify user, allow for different level of permissions for different users.
+	
+Security levels:
+	1) Physical security
+	2) DBMS security
+	3) OS security
+	4) Network security
+	5) Human verification: who are allowed for dbms access.
+	
+	
+- Authorization: It refers to the mechanism of authorizing authenticated users to perform certain operations, basically checking and making sure that users can only do operations they
+	are permitted to do.
+	- It can include:
+	1) authorization to read data
+	2) to write data
+	3) modify/update data
+	4) delete data
+
+- The highest authority is given to DBA(Database Administrator).
+
+#Grant Commands
+Syntax: Grant privileges on <database>.<table> to '<user>' @ '<host>';
+Grant select on tesla.customers to 'sandarva' @ '%'; -- '%' means every host.
+Grant inser,update,delete on mydb.* to 'sandarva' @ 'localhost';
+
+#Revoke Commands
+Syntax: Revoke privileges on <database>.<table> from '<user>' @ '<host>';
+
+--View what privileges does user have
+show grants for '<user>' @ '<host>';
+
+--Remove user
+Drop user '<user>' @ '<host>'; -- use '%' on host to remove user from every host.
+
+
+- Role: A role is a mechanism to manage privileges to users more efficiently. Here we create role, and add required privileges to it, and assign role to user, giving them all those
+	privileges. Instead of providing privileges 1 by 1 to each user, it lets use make a set of privileges and assign it to user.
+	#Role commands
+	create role teacher;
+	grant insert,select on mydb to teacher; -- grant privileges to role
+	grant teacher to 'teacher1' @ '%'; -- assign 'teacher1' user a teacher role
+	revoke teacher from 'teacher1' @ '%';
+	drop role teacher; -- remove the role entirely

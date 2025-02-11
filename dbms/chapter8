@@ -1,0 +1,28 @@
+- Serializability:
+	- Problems don't arises in serial schedule, because a transaction is executing one at a time and no other transaction can interfere with it.
+	The main objective of serializability is to find out the schedules which are parallel(non-serial) and check if they produce same result as serial schedule. If they can produce the 
+	same output as serial sechedule(no problems arised while multiple Transactions where concurrently executing) then that schedule can be serialized(can be converted to serial 
+	schedule).
+	
+
+- Recoverability:	
+	- A method to address the effect of transaction failure during concurrent execution.
+	- If Ti fails then all other Tj dependent on that Ti must also be aborted.
+	- Recoverable schedule: A schedule is recoverable schedule if following conditions are met in schedule's transactions Ti, Tj, where Tj is dependent on Ti:
+		- Tj reads data written by Ti.
+		- Tj commits after Ti commits.
+	- Unrecoverable schedule: A schedule is unrecoverable, where Tj is dependent on Tj, if:
+		- Tj commits before Ti, and then Ti fails.
+		
+
+
+- Concurrency Control:	
+	- Control mechanism to ensure that multiple transactions can be concurrently executed and to tackle the problems which arises in concurrent execution.
+	- Different techniques are used like Locking method, timestamp method, validation based techniques.
+		- Lock based protocol: 
+			- It allows the 1 transaction per time to lock the data item. Locking of data item can happen in two mode:
+				- Exclusive(x) mode: permit read and write operation to transaction T. Requested through Lock-X instruction.
+				- Shared(s) mode: permit only read operation. Requested through Lock-S instruction.
+			- A transaction T is granted a lock if the requested lock is compatible with other locks held by other transactions.
+			- If requested Lock instruction of T is not compatible, then T is made to wait until the data item is free.
+			
