@@ -1,0 +1,37 @@
+clc = clear command window : clears the screen.
+
+x=-10:0.1:10 : creates a row vector for the x, starting from -10, each step of 0.1, till 10. row vector is a list of elements, meaning a 1 dimensional vector i.e a row.
+
+y = sin(x)
+
+plot(x,y) // plots the given equation into a graph.
+
+grid
+
+xlabel(x-axis)
+
+ylabel(y-axis)
+
+title('Sine-curve)
+
+
+
+a = [1,5,7; 3,11,17; 20,19,25] // it creates a matrix and ; separates the row
+
+rank(a) // gives the rank of a given matrix.
+
+det(a) // gives the determinant of a given matrix.
+
+eig(a) // gives the eigen value of a given matrix.
+
+inv(a) // gives the inverse of a given matrix.
+
+
+symx(x) // symblic of x
+
+
+diff(sin(x)) // gives the derivative, ie. cos(x)
+
+int(sinc(x)) // gives the integration of sin(x), ie -cos(x)
+
+int(sin(x), 0, pi) // gives the integration of sin(x), limits from 0 -> pi.

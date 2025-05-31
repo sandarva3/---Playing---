@@ -1,0 +1,43 @@
+- abs(x): absolute of x
+	abs(-1): absolute of -1, ie 1.
+
+
+- FINDING ROOT OF EQUATION BY SECANT METHOD:
+f = inline('x.^2 - 5*x + 6');
+x0 = input('enter the first guessing of x, x0: ');
+x1 = input('enter the second  guessing of x, x1: ');
+e = input('enter the first guessing of e(ie error): ');
+format long
+while(abs(x1 - x0) > e)%while the absolute value of (x1-x0) is > e, perform these steps till 'end'.
+    f0 = f(x0);
+    f1 = f(x1);
+    x2 = (f1 * x0 - x1 * f0)/(f1 - f0)
+    x0 = x1
+    x1 = x2
+end
+disp('the final root is: ');
+disp(x2); // displays till 14 decimals
+
+
+
+- print someting on console
+	fprintf('The required root is: %f\n', x2); // displays till 6 decimal digits
+
+
+
+- Solving another problem: 
+f = inline('3*x + sin(x) - exp(x)');
+x0 = input('enter the first guessing of x, x0: ');
+x1 = input('enter the second  guessing of x, x1: ');
+e = input('enter the first guessing of e(ie error): ');
+format long
+while(abs(x1 - x0) > e)%while the absolute value of (x1-x0) is > e, perform these steps till 'end'.
+    f0 = f(x0);
+    f1 = f(x1);
+    x2 = (f1 * x0 - x1 * f0)/(f1 - f0)
+    x0 = x1
+    x1 = x2
+end
+disp('the final root is: ');
+x2
+fprintf('The required root is: %f\n', x2);
